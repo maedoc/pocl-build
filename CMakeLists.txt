@@ -1,6 +1,6 @@
 project(pocl-build)
 cmake_minimum_required(VERSION 3.6)
-include("cmake_util.cmake")
+include("pocl_build_util.cmake")
 
 # pick versions
 set(LLVM_VER "3.8.1")
@@ -20,7 +20,6 @@ get_source_archive(
 	"pocl-${POCL_VER}.tar.gz")
 
 # unpack archives
-
 foreach(srcdir "cfe-${LLVM_VER}.src" "llvm-${LLVM_VER}.src" "pocl-${POCL_VER}")
 	unpack_source(${srcdir})
 endforeach(srcdir)
